@@ -1,0 +1,81 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: monospace;
+    background: linear-gradient(45deg,rgb(15, 56, 161),#77f);
+    background-size: 400%;
+    animation: animate 15s ease-in-out infinite;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container {
+    position: fixed;
+    border: 1px rgba(186, 186, 255,0.66) solid;
+    border-radius: 5vh;
+    background-color: rgba(186, 186, 255, 0.33);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 40vh;
+    width: 60vw;
+
+}
+
+input {
+    margin: 2vh;
+    border: 2px rgb(186, 186, 255) solid;
+    border-radius: 1vh;
+}
+
+
+.smIcon {
+    position: absolute;
+    height: 4vh;
+    left: 15%;
+    top: 31.5%;
+}
+
+.smIcon2 {
+    position: absolute;
+    height: 4vh;
+    left: 15%;
+    top: 50%;
+}
+
+.btn-login {
+    height: 4vh;
+    width: 20vh;
+    background-color: #4763C0;
+    border: rgba(15, 56, 161,0.66) solid 3px;
+    border-radius: 2vh;
+    position: relative;
+    left: 20%;
+    font-size: 13px;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+.btn-login:hover {
+    background: linear-gradient(45deg,#4763C0,hsl(226, 86%, 30%));
+    background-size: 400%;
+    border: rgba(15, 56, 161,0.66) solid 3px;
+    animation: animate 5s ease-in-out infinite;
+}
+
+@keyframes animate {
+    0% {
+        background-position: 0 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0 50%;
+    }
+}
