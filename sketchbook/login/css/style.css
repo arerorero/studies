@@ -7,6 +7,7 @@
 body {
     font-family: monospace;
     background: linear-gradient(45deg,#0f38a1,#77f);
+    /* here you can change the background commenting the line below, you will probably want to change the animation speed too :happy-face:*/
     background: url('../img/nuvem.jpg');
     background-size: 400%;
     animation: animate 90s ease-in-out infinite;
@@ -32,6 +33,7 @@ body {
 .container {
     box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.1);
     display: grid;
+    /* "it would be probably easier to make the alignment if I had more columns and rows" */
     grid-template-columns: repeat(1,1fr);
     grid-template-rows: repeat(6,1fr);
     background-color: #ffffff0f;
