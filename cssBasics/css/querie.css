@@ -1,4 +1,4 @@
-/* Basic Reset Bellow */
+/* Basic Reset */
 
 * {
     margin: 0;
@@ -6,13 +6,11 @@
     box-sizing: border-box;   
 }
 
-/* Basic Reset Above */
-
-/* General Styles Bellow*/
+/* General Styles */
 
 body {
     font: 1.5rem monospace;
-    min-height: 100vh;
+    min-height: 400vh;
     background-color: #333;
     background-image: radial-gradient(whitesmoke,#333);
     display: flex;
@@ -51,13 +49,54 @@ footer {
     bottom: 0;
 }
 
+/* SMALL */
 
-/* General Styles Above */
-
-/* small */
 @media screen and (min-width: 576px) {
     body {
         background-color: blue;
         background-image: radial-gradient(whitesmoke,blue);
+    } nav {
+        display: none;
     }
 }
+
+/* MEDIUM */
+
+@media screen and (min-width: 768px) {
+    body {
+        background-color: gold;
+        background-image: radial-gradient(whitesmoke,gold);
+    }
+}
+
+/* LARGE */
+
+@media screen and (min-width: 992px) {
+    body {
+        background-color: firebrick;
+        background-image: radial-gradient(whitesmoke,firebrick);
+    }
+}
+
+/* XLARGE */
+
+@media screen and (min-width: 1220px) {
+    body {
+        background-color: purple;
+        background-image: radial-gradient(whitesmoke,purple);
+    }
+}
+
+/* MOBILE DEVIDE LANDSCAPE */
+
+@media screen and (max-height: 425px) and (min-aspect-ratio:7/4) {
+    body {
+        background-color: dodgerblue;
+        background-image: radial-gradient(whitesmoke,dodgerblue);
+    } h1,h2 {
+        font-size: 1.5rem;
+    } nav {
+        display: none;
+    }
+}
+
