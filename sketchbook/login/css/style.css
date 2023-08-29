@@ -77,7 +77,7 @@ body {
 
 .box:first-child {
     grid-row: 1/4;
-} 
+}
 
 .smIcon {
     position: absolute;
