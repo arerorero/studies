@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style/style.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <form action="https://httpbin.org/post" method="post" enctype="multipart/form-data">
+        <div id="drop-zone" onclick="fileClick()">
+            <p>Arraste e solte um arquivo aqui ou clique para selecionar.</p>
+            <input type="file" id="file-input" name="file">
+        </div>
+        <button type="submit">Enviar</button>
+    </form>
+    <script src="style/js.js"></script>
+</body>
+</html>
