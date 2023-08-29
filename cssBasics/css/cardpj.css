@@ -12,7 +12,20 @@ img {
     height: auto;
 }
 
+/* Variables */
+
+:root {
+    /* COLOR */
+    --BGCOLOR1: hsl(270, 33%, 25%);
+    --LREBECA: linear-gradient(40deg,rebeccapurple,pink);
+    --BGCARD: #CBD;
+    --EMJCOFFEE: '☕';
+    --EMJPUMP: '🎃';
+    --RBACKGROUND: radial-gradient(whitesmoke,var(--BGCOLOR1));
+}
+
 /* Utility */
+
 
 .nowrap {
     white-space: nowrap;
@@ -30,15 +43,13 @@ body {
 
     font: 1.5rem monospace;
     min-height: 100vh;
-    
 
-    background-color: #333;
-    background-image: radial-gradient(whitesmoke,#456);
+    background-image: var(--RBACKGROUND);
 }
 
 header, footer {
     position: sticky;
-    background-color: #456;
+    background-color: var(--BGCOLOR1);
     color: whitesmoke;
     text-align: center;
 }
@@ -66,27 +77,42 @@ nav {
     justify-content: space-evenly;
 }
 
-nav a,
-nav a:visited {
+	
+
+nav a:any-link{
+    /* a:any-link =  :is(a,a:visited) */
     color: black;
 }
 
-nav a:hover,
-nav a:focus {
+nav :is(a:hover, a:focus) {
     color: #333;
+}
+
+nav a:active {
+    color: red;
 }
 
 footer {
     bottom: 0;
 }
 
+.back {
+    align-self: center;
+    text-decoration: none;
+}
+
+.feet {
+    padding: 0.5rem 0.5rem;
+}
+
 /* profile card */
 
 .card {
-    /* height: 80vh; */
+    text-align: center;
+    /* height: 32rem; */
     scroll-margin-top: 8rem;
     width: min(100%,350px);
-    background-color: #cbd;
+    background-color: var(--BGCARD);
     border: 2px solid black;
     border-radius: 15px;
     padding: 1rem;
@@ -96,12 +122,28 @@ footer {
     align-items: center;
 }
 
+.card img:not([alt]) {
+    border: 10px solid red;
+}
+
+.card:nth-child(666) {
+    border: 2px solid black;
+}
+
+.card:target {
+    border: 2px solid rebeccapurple;
+    background: var(--LREBECA);
+    background-size: contain;
+    background-position: center;
+}
+
 .card figure{
     display: flex;
     flex-flow: column nowrap;
 }
 
 .card img {
+    height: 50%;
     width: auto;
     border: 8px double black;
     border-radius: 50%;
@@ -114,15 +156,40 @@ footer {
     margin: 1rem;
 }
 
+.card figcaption::first-letter {
+    font-size: 1.75em;
+}
+
+.card figcaption::first-line {
+    color: black;
+}
+
+.card figcaption::after {
+    display: block;
+    content: var(--EMJCOFFEE);
+}
+
+.card:nth-child(2) figcaption::after {
+    display: block;
+    content: var(--EMJPUMP);
+}
+
+
+
+
 /* SMALL */
 
 @media screen and (min-width: 576px) {
     main {
         justify-content: center;
         flex-flow: row wrap;
-    } .card {
+    } 
+
+    .card {
         width: min(100%,400px)
-    } .card:last-child {
+    } 
+    
+    .card:last-child {
         order: -1;
     }
 }
@@ -132,13 +199,28 @@ footer {
 @media screen and (min-width: 768px) {
     nav {
         display: none;
-    } .card {
+    } 
+
+    .back {
+        display: flex;
+        align-content: center;
+        justify-content: center;
+        display: none;
+    }
+    
+    .card {
         width: min(100%,325px);
-    } .card figure {
+    } 
+    
+    .card figure {
         flex-flow: column-reverse;
-    } .card figcaption {
+    } 
+    
+    .card figcaption {
         margin: 0.1rem 0;
-    } .card p {
+    } 
+    
+    .card p {
         margin-top: 1rem;
     }
 }
@@ -148,7 +230,9 @@ footer {
 @media screen and (min-width: 992px) {
     .card {
         width: min(100%,400px);
-    } .card:nth-child(2) {
+    } 
+    
+    .card:nth-child(2) {
         order: -1;
     }
 }
@@ -166,15 +250,23 @@ footer {
 @media screen and (max-height: 425px) and (min-aspect-ratio:7/4) {
     h1 {
         font-size: 1.5rem;
-    } nav {
+    } 
+    
+    nav {
         display: none;
-    } main {
+    } 
+    
+    main {
         flex-flow: row nowrap;
         justify-content: space-evenly;
         align-items: stretch;
-    } .card {
+    } 
+    
+    .card {
         width: min(calc(33% - 0.25rem),200px)
-    } .card figcaption, .card p {
+    } 
+    
+    .card figcaption, .card p {
         font-size: 1.25rem;
     }
 }
