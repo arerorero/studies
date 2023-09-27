@@ -85,7 +85,7 @@ a:active {
 }
 
 .container {
-    display: flex; 
+    display: flex;
   }
 
 .contentBox{
@@ -170,7 +170,7 @@ a:active {
 .navH2{
     text-align: center;
     background-color: #6161ff;
-    border-radius: 1.8rem 1.8rem 
+    border-radius: 1.8rem 1.8rem
     0rem 0rem;
 }
 
@@ -180,7 +180,7 @@ a:active {
 
 .navLi{
     border-top: 1px solid #333;
-    text-align: center;    
+    text-align: center;
 }
 
 .navLi a{
@@ -194,4 +194,11 @@ a:active {
 
 .navLi:last-child a {
     border-radius: 0 0 2rem 2rem;
+}
+
+.ball {
+    background-color: red;
+    width: 200px;
+    height: 200px;
+    border-radius: 100px;
 }
