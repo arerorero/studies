@@ -10,8 +10,12 @@ const createWindow = () => {
   const { width, height } = screen.getPrimaryDisplay().workAreaSize;
   // Create the browser window.
   const mainWindow = new BrowserWindow({
-    width: width,
-    height: height,
+    // width: width,
+    // height: height,
+
+    width: 666,
+    height: 666,
+
     webPreferences: {
       preload: path.join(__dirname, 'preload.js'),
     },
