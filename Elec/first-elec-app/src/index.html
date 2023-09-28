@@ -6,7 +6,19 @@
     <link rel="stylesheet" href="index.css" />
   </head>
   <body>
-    <h1>Hello World!</h1>
+    <div id="container"></div>
+    <!-- Adicione o script aqui -->
+    <script>
+      // Seu código JavaScript vai aqui
+      for (var i = 0; i < 2; i++) {
+        // Crie um elemento h1
+        var h1Element = document.createElement('h1');
+        // Defina o texto do elemento
+        h1Element.textContent = 'Hello World ' + (i + 1);
+        // Adicione o elemento ao contêiner
+        document.getElementById('container').appendChild(h1Element);
+      }
+    </script>
     <p>how can I do all sorts of things?.</p>
   </body>
 </html>
