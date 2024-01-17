@@ -53,6 +53,15 @@ body {
     left: 0;
 }
 
+.calculadora-container {
+    background:linear-gradient(90deg,red,green,blue);
+    background-size: 800%;
+    animation: moveBackground 2s linear infinite;
+    position: relative;
+    top: 0;
+    left: 0;
+ }
+
 @keyframes moveBackground {
     0%, 100% {
       background-position: 0;
