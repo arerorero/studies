@@ -4,8 +4,7 @@
 }
 
 body {
-  background-color: #81a69b;
-  background-image: url(http://pets-images.dev-apis.com/pets/wallpaperB.jpg);
+  background-color: #aff;
   margin: 0;
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
@@ -191,7 +190,7 @@ header {
 #modal button,
 #modal a,
 .details button {
-  background-color: #ad343e;
+  background-color: #d24b57;
   padding: 5px 25px;
   color: white;
   font-size: 18px;
