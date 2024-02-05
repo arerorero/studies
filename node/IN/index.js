@@ -1,7 +1,14 @@
-if (process.argv[2]) {
-  for (let i = 2; i < process.argv.length; i++) {
-    console.log(process.argv[i]);
-  }
-}
+#!/usr/bin/env node
+import _ from "lodash";
+const note = process.argv[2];
+let code = _.random(1, 99);
+const newNote = {
+  content: note ? note : "No note provided.",
+  id: code + "." + Date.now(),
+};
 
-console.log(process.env);
+console.log(newNote);
+
+(function () {
+  console.log("IIFE");
+})();

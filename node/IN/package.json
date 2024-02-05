@@ -3,9 +3,16 @@
   "version": "1.0.0",
   "description": "https://frontendmasters.com/courses/node-js-v3",
   "main": "index.js",
+  "type": "module",
+  "bin": {
+    "note": "./index.js"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "arerorero",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "lodash": "^4.17.21"
+  }
 }
