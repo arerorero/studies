@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 import "./src/command.js";
-import * as f from "./src/command.js";
+import * as u from "./src/utils.js";
 
-await f.wait(1000);
+await u.wait(1000);
 console.log("done");

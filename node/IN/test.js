@@ -1,14 +1,12 @@
-const wait = (time) => {
-  return new Promise((resolve, reject) => {
-    setTimeout(() => {
-      resolve();
-    }, time);
-  });
+import fs from "node:fs/promises";
+
+const readPJson = async () => {
+  console.log(JSON.parse(await fs.readFile("./package.json", "utf8")));
 };
 
-await wait(1000);
-console.log("done");
-await wait(1000);
-console.log("2sec done");
-await wait(1000);
-console.log("3sec done");
+const writeFile = async () => {
+  await fs.writeFile("./demo.js", "console.log('yoooo!');");
+};
+
+readPJson();
+writeFile();

@@ -1,14 +1,6 @@
 import yargs from "yargs";
 import { hideBin } from "yargs/helpers";
 
-export const wait = (time) => {
-  return new Promise((resolve, reject) => {
-    setTimeout(() => {
-      resolve();
-    }, time);
-  });
-};
-
 yargs(hideBin(process.argv))
   .command(
     "new <note>",
