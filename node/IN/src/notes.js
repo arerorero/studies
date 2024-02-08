@@ -1,4 +1,13 @@
-import { insertDB as insert, getDB as get, saveDB as save } from "./db.js";
+import { insertDB, getDB, saveDB } from "./db.js";
+
+export const listNotes = (notes) => {
+  notes.forEach(({ id, content, tags }) => {
+    console.log("id:", id);
+    console.log("content:", content);
+    console.log("tags:", tags);
+    console.log();
+  });
+};
 
 export const newNote = async (note, tags) => {
   const newNote = {
@@ -6,35 +15,33 @@ export const newNote = async (note, tags) => {
     id: Date.now(),
     content: note,
   };
-  await insert(newNote);
+  await insertDB(newNote);
   return newNote;
 };
 
 export const getAllNotes = async () => {
-  const { notes } = await get();
+  const { notes } = await getDB();
   return notes;
 };
 
 export const findNotes = async (filter) => {
-  const { notes } = await get();
+  const { notes } = await getDB();
   return notes.filter((note) =>
     note.content.toLowerCase().includes(filter.toLowerCase())
   );
 };
 
 export const removeNote = async (id) => {
-  const { notes } = await get();
+  const { notes } = await getDB();
   const match = notes.find((note) => note.id === id);
 
   if (match) {
     const newNotes = notes.filter((note) => note.id !== id);
-    await save({ notes: newNotes });
+    await saveDB({ notes: newNotes });
     return id;
   }
 };
 
-export const removeAllNotes = async () => {
-  await save({ notes: [] });
+export const removeAllNotes = () => {
+  saveDB({ notes: [] });
 };
-
-removeNote(1707353014612);

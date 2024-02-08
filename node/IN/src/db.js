@@ -1,5 +1,4 @@
 import fs from "node:fs/promises";
-
 var path = new URL("../db.json", import.meta.url).pathname;
 // replace %20 from path to space
 const DB_PATH = path.replace(/%20/g, " ").slice(1);

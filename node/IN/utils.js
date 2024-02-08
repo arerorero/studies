@@ -5,3 +5,7 @@ export const wait = (time) => {
     }, time);
   });
 };
+
+export const cls = () => {
+  process.stdout.write("\x1Bc");
+};
