@@ -1,3 +1,11 @@
 import http from "http";
-const server = http.createServer();
-server.listen(300);
+
+const handler = (req, res) => {
+  req.on("data", (chunk) => {
+    console.log("data", chunk);
+  });
+  res.writeHead(200, { "Content-Type": "text/plain" });
+  res.end("Hello World\n");
+};
+
+const server = http.createServer(handler).listen(3000);
