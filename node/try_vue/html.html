@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://unpkg.com/vue@3.0.2"></script>
+    <link rel="stylesheet" href="css.css" />
+    <title>trying vue</title>
+  </head>
+  <body>
+    <h1>Best Musics</h1>
+    <div id="app">
+      <button @click="this.showBooks = !this.showBooks">
+        <p v-show="!showBooks">Show Musics</p>
+        <p v-show="showBooks">Unshow Musics</p>
+      </button>
+      <button @click="this.onlyFav = !this.onlyFav">Favorites</button>
+
+      <div v-if="showBooks">
+        <ul>
+          <li
+            @click="book.isFav = !book.isFav"
+            v-for="book in filteredBooks"
+            :class="{ fav: book.isFav}"
+          >
+            <p v-if="book.isFav" class="star">⭐️</p>
+            <h3>{{ book.title }}</h3>
+            <p>by {{ book.author }}</p>
+            <img
+              v-if="book.img"
+              :src="book.img"
+              :alt="book.title"
+              width="100"
+            />
+          </li>
+        </ul>
+      </div>
+    </div>
+    <script src="app.js"></script>
+  </body>
+</html>
