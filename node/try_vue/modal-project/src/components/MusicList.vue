@@ -1,15 +1,12 @@
 <template>
-  <div class="backdrop" tabindex="0" @keydown.esc="close" @click.self="close">
-    <div class="modal">
-      <h1>Music List</h1>
-      <div class="list-frame">
-        <ul class="music-list">
-          <li v-for="music in list" :key="music.title">
-            {{ music.title }}
-          </li>
-        </ul>
-      </div>
-    </div>
+  <h1>Music List</h1>
+  <div class="list-frame">
+    <ul class="music-list">
+      <li v-for="music in list" :key="music.title">
+        <a :href="music.link">{{ music.title }}</a>
+        <span class="author"> {{ music.author }}</span>
+      </li>
+    </ul>
   </div>
 </template>
 
@@ -27,20 +24,32 @@ export default {
 };
 </script>
 
-<style>
+<style scoped>
+h1 {
+  color: #430f58;
+}
 .list-frame {
-  border: hsl(240, 26%, 55%) 1px solid;
+  border: #430f58 1px solid;
   border-radius: 10px;
-  display: flex;
-  justify-content: left;
 }
 
 .music-list {
   padding-left: 8px; /* Removes default padding */
-  text-align: left;
 }
 
+.author {
+  font-style: italic;
+  padding-right: 8px;
+  color: #430f58;
+}
 .music-list li {
   list-style-position: inside; /* Ensures bullets or numbers are aligned with the text */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+a {
+  color: #430f58;
+  text-decoration: none;
 }
 </style>

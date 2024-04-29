@@ -1,19 +1,17 @@
 <template>
   <div class="backdrop" tabindex="0" @keydown.esc="close" @click.self="close">
-    <div class="modal">
+    <div class="PopUp">
+      <a class="close-button" @click="close">x</a>
       <slot />
-      <div class="actions">
-        <slot name="links" />
-      </div>
     </div>
   </div>
 </template>
 
 <script>
 export default {
-  name: "Modal",
+  name: "PopUp",
   props: {
-    showModal: Boolean,
+    showPopUp: Boolean,
   },
   methods: {
     close() {
@@ -24,18 +22,26 @@ export default {
 </script>
 
 <style>
+a {
+  color: #430f58;
+  text-decoration: none;
+}
 button {
-  background-color: #e6e6e6;
-  color: #333;
-  border: black 1px solid;
-  box-shadow: 0 0 2px #333;
+  background-color: #430f58;
+  color: #d5def5;
+  border: #6643b5 1px solid;
+  box-shadow: 0 0 2px #6643b5;
   padding: 10px 20px;
   border-radius: 5px;
   cursor: pointer;
 }
 
-li {
-  list-style: none;
+.close-button {
+  color: #430f58;
+  text-decoration: none;
+  position: absolute;
+  right: 1.4%;
+  top: 0.8%;
 }
 
 .backdrop {
@@ -48,36 +54,21 @@ li {
   animation: fadeIn 0.3s ease-out forwards;
 }
 
-.modal {
-  width: 400px;
+.PopUp {
+  width: 30%;
   padding: 20px;
-  margin: 100px auto;
+  margin: 7% auto;
   background-color: #aaf;
-  color: #fff;
+  color: #d5def5;
   border-radius: 10px;
-  box-shadow: -2px 2px 10px #333;
+  box-shadow: -2px 2px 10px #430f58;
+  position: relative;
 }
 
-.modal h1 {
-  border-bottom: 2px solid hsl(240, 26%, 55%);
+.PopUp h1 {
+  border-bottom: 2px solid #430f58;
   display: inline-block;
   padding-bottom: 10px;
-}
-
-.modal .actions {
-  margin: 0 auto;
-  width: 40%;
-  border-radius: 10px;
-  border: hsl(240, 26%, 55%) 1px solid;
-}
-
-.modal .actions a {
-  color: hsl(240, 26%, 55%);
-  text-decoration: none;
-}
-
-.modal .actions a:hover {
-  color: hsl(240, 26%, 30%);
 }
 
 @keyframes fadeIn {

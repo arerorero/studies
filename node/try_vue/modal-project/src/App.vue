@@ -1,63 +1,72 @@
 <template>
-  <button @click="toggleModal">cadastre uma musica</button>
-  <Modal v-if="showModal" @close="toggleModal">
-    <h1>teste</h1>
-    <h3>teste de h3</h3>
-    <template v-slot:links>
-      <li>
-        <a href="#">HOME</a>
-      </li>
-      <li>
-        <a href="#this it not home leave">Not HOME</a>
-      </li>
-    </template>
-  </Modal>
+  <SideBar />
+  <button @click="toggleMusicForm">cadastre uma musica</button>
   <br />
-  <button @click="toggleModal2">lista de musicas</button>
-  <MusicList v-if="showModal2" @close="toggleModal2" :list="list"> </MusicList>
+  <div class="space"></div>
+  <button @click="toggleMusicList">lista de musicas</button>
+  <PopUp v-if="showMusicForm" @close="toggleMusicForm">
+    <MusicForm @close="toggleMusicForm" />
+  </PopUp>
+  <PopUp v-if="showMusicList" @close="toggleMusicList">
+    <MusicList :list="list" @close="toggleMusicList" />
+  </PopUp>
 </template>
 
 <script>
-import Modal from "./components/Modal.vue";
+import PopUp from "./components/PopUp.vue";
 import MusicList from "./components/MusicList.vue";
+import MusicForm from "./components/MusicForm.vue";
+import SideBar from "./components/SideBar.vue";
+
 export default {
   name: "App",
   components: {
-    Modal,
+    PopUp,
     MusicList,
+    MusicForm,
+    SideBar,
   },
   data() {
     return {
-      showModal: false,
-      showModal2: false,
+      showMusicForm: false,
+      showMusicList: false,
       title: "Login",
       paragraph: "n fiz o form",
       list: [
         {
           title: "Ancient Stones",
           author: "Jeremy Soule",
+          link: "https://open.spotify.com/intl-pt/track/2gEAHKw83WHPD875YqDHH2?si=b9837774dfdb4875",
         },
         {
           title: "Birth of a Penguin",
           author: "Danny Elfman",
+          link: "https://open.spotify.com/intl-pt/track/1R9xzwkirC3WRcLngXKPgS?si=dd62dc4a2a8c47ee",
         },
         {
           title: "The Imperial March",
           author: "John Williams",
+          link: "https://open.spotify.com/intl-pt/track/2bw4WgXyXP90hIex7ur58y?si=531a4d6eb7e7401f",
         },
         {
           title: "Swag On",
           author: "Mary Riddle",
+          link: "https://open.spotify.com/intl-pt/track/0iebmmLinBgwluCIICAg6f?si=43dea7b7f8274ec3",
+        },
+        {
+          title: "Secunda",
+          author: "Jeremy Soule",
+          link: "https://open.spotify.com/intl-pt/track/5fHgBb5r91Jmdr8Q7dwmad?si=877b558bcd1e4151",
         },
       ],
     };
   },
   methods: {
-    toggleModal() {
-      this.showModal = !this.showModal;
+    toggleMusicForm() {
+      this.showMusicForm = !this.showMusicForm;
     },
-    toggleModal2() {
-      this.showModal2 = !this.showModal2;
+    toggleMusicList() {
+      this.showMusicList = !this.showMusicList;
     },
   },
 };
@@ -69,17 +78,22 @@ export default {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
-  color: #2c3e50;
+  color: #d5def5;
   margin-top: 60px;
 }
+
+.space {
+  margin-top: 20px;
+}
+
 h1 {
-  border-bottom: 2px solid #ddd;
+  border-bottom: 2px solid #d5def5;
   display: inline-block;
   padding-bottom: 10px;
 }
 a {
   cursor: pointer;
-  color: blue;
+  color: #d5def5;
   text-decoration: underline;
 }
 </style>
