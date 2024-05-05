@@ -21,8 +21,6 @@ export default {
   },
   methods: {
     activateAnimation() {
-      console.log("pass");
-      // Método para garantir que as animações sejam reativadas se necessário
       this.animation = true;
     },
   },
