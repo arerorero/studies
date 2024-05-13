@@ -1,0 +1,18 @@
+{
+  "jobs": [
+    {
+      "id": 1,
+      "title": "Ui/Ux Designer",
+      "description": "this job is for designers",
+      "company": "JANTABOSTA S/A",
+      "salary": "R$ 5.000,00"
+    },
+    {
+      "id": 2,
+      "title": "FullStack Developer",
+      "description": "this job is for developers",
+      "company": "JANTABOSTA S/A",
+      "salary": "R$ 5.000,00"
+    }
+  ]
+}

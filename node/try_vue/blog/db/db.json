@@ -1,0 +1,22 @@
+{
+  "posts": [
+    {
+      "id": 1,
+      "title": "TOP NOMES JANTABOSTA",
+      "body": "ESSES SAOS OS MELOHES NOMES JANTABOSTA",
+      "tags": ["BICHOGRILO", "JANTABOSTA"]
+    },
+    {
+      "id": 2,
+      "title": "SMILKI FRIENDS",
+      "body": "ESSES SAO OS IMSLIMI FRIENDS",
+      "tags": ["TAG1", "BICHOGRILO", "JANTABOSTA"]
+    },
+    {
+      "id": 3,
+      "title": "TUTORIAL DE CSS",
+      "body": "VC VAI CONSEGUIR CENTRALIZAR UMA DIV COM ESSE TUTORIAL DE CSS (display: flex; align-items: center; justify-content: center;)",
+      "tags": ["HARDCORE", "IMPOSSIBLE", "CSS"]
+    }
+  ]
+}
